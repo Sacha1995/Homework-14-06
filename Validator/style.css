@@ -1,0 +1,43 @@
+* {
+  margin: 0px;
+  line-height: 25px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+main {
+  margin: 20px auto 20px auto;
+  padding: 20px;
+  max-width: 316px;
+  border: lightblue dotted 3px;
+  background-color: rgb(214, 237, 245);
+}
+
+h1 {
+  text-align: center;
+}
+
+h1,
+.mb {
+  margin-bottom: 20px;
+}
+
+.error {
+  color: red;
+}
+
+button {
+  display: block;
+  border: darkgoldenrod solid 2px;
+  border-radius: 10px;
+  font-size: 20px;
+  margin: 5px auto;
+  padding: 5px 20px;
+  background-color: rgb(238, 212, 145);
+  transition: background-color 0.5s, border 0.5s;
+}
+
+button:hover {
+  border: rgb(4, 100, 28) solid 2px;
+  background-color: rgb(143, 236, 193);
+  transition: background-color 0.5s, border 0.5s;
+}

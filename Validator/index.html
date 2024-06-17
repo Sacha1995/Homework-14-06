@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validator Try</title>
+    <script src="
+https://cdn.jsdelivr.net/npm/joi-browser@13.4.0/dist/joi-browser.min.js
+"></script>
+    <script src="form.js" type="module"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>My friend book</h1>
+      <form action="" id="form1">
+        <label for="name">Name</label><br />
+        <p id="nameError" class="error"></p>
+        <input type="text" id="name" class="name mb" name="name" /><br />
+        <label for="bday">Birthday</label><br />
+        <p id="bdayError" class="error"></p>
+        <input type="date" id="bday" class="bday mb" name="bday" /><br />
+        <label for="age">Current age</label><br />
+        <p id="ageError" class="error"></p>
+        <input type="text" id="age" class="age mb" name="age" /><br />
+        <label for="favColor">Favourite colour</label><br />
+        <p id="favColorError" class="error"></p>
+        <input
+          type="text"
+          id="favColor"
+          class="favColor mb"
+          name="favColor"
+        /><br />
+
+        <label for="dream">What is your dream?</label><br />
+        <p id="dreamError" class="error"></p>
+        <input type="text" id="dream" class="dream mb" name="dream" /><br />
+
+        <p>Which flavour(s) of ice cream best represent you?</p>
+        <!-- <p id="icecreamError" class="error"></p> -->
+        <input type="checkbox" id="icecream1" name="icecream" value="vanilla" />
+        <label for="icecream1"> Vanilla</label><br />
+        <input type="checkbox" id="icecream2" name="icecream" value="mint" />
+        <label for="icecream2"> Mint chocolate chip</label><br />
+        <input
+          type="checkbox"
+          id="icecream3"
+          name="icecream"
+          value="chocolate"
+        />
+        <label for="icecream3"> Chocolate</label><br />
+        <input type="checkbox" id="icecream4" name="icecream" value="cookies" />
+        <label for="icecream4"> Cookies & cream</label><br />
+        <input
+          type="checkbox"
+          id="icecream5"
+          name="icecream"
+          value="strawberry"
+          class="mb"
+        />
+        <label for="icecream5" class="strawberry mb"> Strawberry</label><br />
+        <label for="video">Funniest youtube video</label><br />
+        <p id="videoError" class="error"></p>
+        <input type="url" id="video" class="video mb" name="video" /><br />
+
+        <p>
+          Would you rather fight 10 duck-sized horses, or 1 horse-sized duck?
+        </p>
+        <!-- <p id="fightError" class="error"></p> -->
+        <input type="radio" id="ten" name="fight" value="ten" />
+        <label for="ten"> 10 duck-sized horses</label><br />
+        <input type="radio" id="one" name="fight" value="one" class="mb" />
+        <label for="one" class="labelone"> 1 horse-sized duck</label><br />
+        <button>Submit</button>
+      </form>
+    </main>
+  </body>
+</html>
