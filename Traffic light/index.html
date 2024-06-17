@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Traffic Light</title>
+    <script src="./index.js" type="module"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="containerLight">
+      <div class="outer">
+        <div class="inner">
+          <div class="light stop"></div>
+          <div class="light caution"></div>
+          <div class="light go"></div>
+        </div>
+      </div>
+    </div>
+    <div class="game">
+      <p>&#8593; Traffic light for the car &#8593;</p>
+      <div class="screen">
+        <div class="road">
+          <div class="collisionContainer">
+            <div class="containerCar" id="containerCar">
+              <img src="./img/car.png" alt="car" class="car" id="car" />
+              <img src="./img/car.png" alt="car" class="car" id="car" />
+              <img src="./img/car.png" alt="car" class="car" id="car" />
+            </div>
+          </div>
+        </div>
+        <div class="pavement">
+          <div class="pavement1">
+            <div class="pedestrian">
+              <img
+                src="./img/pedestrian.png"
+                alt="Pedestrian"
+                class="pedestrian"
+                id="pedestrian"
+              />
+            </div>
+          </div>
+          <div class="pavement2"></div>
+        </div>
+      </div>
+      <p>Can you cross when it is safe? (tip: cross when red)</p>
+      <div class="btnGame">
+        <button class="btn btnPlay" id="btnPlay">Easy Mode</button>
+        <button class="btn btnPlayHard" id="btnPlayHard">Hard Mode</button>
+        <button class="btn btnReset" id="btnReset">Reset</button>
+        <button class="btn btnWalk" id="btnWalk">Walk</button>
+      </div>
+    </div>
+    <div class="containerText">
+      <p>&#8595; You can also play the game with these &#8595;</p>
+    </div>
+
+    <footer>
+      <div class="containerBtn">
+        <div class="containerColouredButtons">
+          <button class="btn" id="stop">Stop</button>
+          <button class="btn" id="caution">Caution</button>
+          <button class="btn" id="go">Go</button>
+        </div>
+        <div class="containerLoop">
+          <button class="btn ST startTimer" id="startTimer">Start UK</button>
+          <button class="btn ST startTimerNL" id="startTimerNL">
+            Start NL
+          </button>
+          <button class="btn ST startTimerGER" id="startTimerGER">
+            Start GER
+          </button>
+          <button class="btn stopTimer" id="stopTimer">Stop timer</button>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
