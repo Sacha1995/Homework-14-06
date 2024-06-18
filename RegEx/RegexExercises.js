@@ -25,7 +25,7 @@ const matches = str2.match(re2);
 console.log(matches);
 
 // 5. Test which of these strings starts with 'cat';
-const re5 = /\bcat/g;
+const re5 = /^cat/g;
 const strs5 = ["catholic", "hat", "cataholic"];
 
 const result = strs5.filter((str) => re5.test(str));
@@ -33,7 +33,7 @@ const result = strs5.filter((str) => re5.test(str));
 console.log(result);
 
 // 6. Test which of these strings ends with 'ing';
-const re6 = /ing\b/g;
+const re6 = /ing$/g;
 const strs6 = ["living", "vapid", "laughing", "vacuous", "loving"];
 
 const result6 = strs6.filter((str) => re6.test(str));
@@ -41,7 +41,7 @@ const result6 = strs6.filter((str) => re6.test(str));
 console.log(result6);
 
 // 7. Confirm that this string has the word 'holy' in it.
-const re7 = /holy/gi;
+const re7 = /\bholy\b/gi;
 const str7 = "God, the father, the son and the holy spirit";
 
 const contains7 = re7.test(str7);
@@ -49,7 +49,7 @@ const contains7 = re7.test(str7);
 console.log(contains7);
 
 // 8. Confirm that this string has a word starting with 'flap' in it.
-const re8 = /flap\B/gi;
+const re8 = /\bflap/gi;
 const str8 = "And lo, he was flapping about";
 
 const contains8 = re8.test(str8);
@@ -77,7 +77,7 @@ const contains11 = re11.test(str11);
 console.log(`has a vowel: ` + contains11);
 
 // 12. Create a Regex that tests if something has one number between 2 and 7 in it
-const re12 = /[2-7]/;
+const re12 = /^[2-7]$/;
 const str12 = "1198";
 
 const contains12 = re12.test(str12);
@@ -123,6 +123,7 @@ const date17 = starDateString.match(re17);
 console.log(date17);
 
 // 18. Use capture groups and .match() to get the day, month and year from this string
+// why does the re18 not give back the month, year and day?
 const re18 = /(?<day>\d{1,2})\*(?<month>\d{1,2})\*(?<year>\d{2,4})/g;
 const starDateString2 =
   "Star date 11*04*22! What a good date! 12*04*22 is better though";
@@ -169,6 +170,11 @@ const result22 = arr22.filter((item) => re22.test(item));
 
 console.log(result22);
 
+//it is cheating, should be:
+// arr22.filter(function (str) {
+//   return /James (?=Sherry)/g.test(str);
+// })
+
 // 23. Find all the strings with Sherry in that have 'Robert' after them
 const re23 = /Sherry, Robert/i; //is this cheating?
 
@@ -180,3 +186,8 @@ const arr23 = [
 const result23 = arr23.filter((item) => re23.test(item));
 
 console.log(result23);
+
+//it is cheating, should be:
+// arr23.filter(function (str) {
+//   return /(?<=Sherry, )Robert/g.test(str);
+// })
