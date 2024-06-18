@@ -4,6 +4,7 @@ let userInput = {};
 const errorRef = document.getElementsByClassName("error");
 const input = document.getElementsByTagName("input");
 const inputArr = Array.from(input);
+let icecreamInteractedWith = false;
 
 //submit data
 friendForm.addEventListener("submit", (e) => {
@@ -17,6 +18,10 @@ friendForm.addEventListener("submit", (e) => {
 
 //validators
 friendForm.addEventListener("input", (e) => {
+  if (inputArr.some((e) => e.name === "icecream" && e.checked === true)) {
+    icecreamInteractedWith = true;
+  }
+  console.log(icecreamInteractedWith);
   const formData = new FormData(friendForm);
   userInput = Object.fromEntries(formData);
   // If you have checkboxes or selects in multiple mode
@@ -53,7 +58,10 @@ const schema = {
 // Makes sure you don't stop after one error
 function validate() {
   const j = Joi.object(schema);
+
   const r = j.validate(userInput, { abortEarly: false });
+
+  console.log(r);
   const errorsObj = {};
 
   // makes it so not all the errors come at ones, just for the inputs you have typed or clicked
@@ -62,8 +70,11 @@ function validate() {
       r.error.details.forEach((error) => {
         if (error.context.key)
           if (input.name == error.context.key) {
-            if (input.value != "") {
-              console.log(input.icecream);
+            if (
+              (input.name !== "icecream" && input.value != "") ||
+              (input.name === "icecream" && icecreamInteractedWith)
+            ) {
+              // console.log(input.icecream);
               errorsObj[error.context.key] = error.message;
             }
           }
